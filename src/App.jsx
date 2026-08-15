@@ -15,8 +15,9 @@ function App() {
     <>
       <Header />
       <HabitCard />
-      <HabitModal />
       <StatsBar />
+      <HabitModal />
+      
     </>
   )
 }
