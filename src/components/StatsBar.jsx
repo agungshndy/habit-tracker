@@ -1,29 +1,27 @@
 import { useState } from "react"
 
-function StatsBar(){
+function StatsBar() {
 
-    const [ streak,setStreak ] = useState(0);
+    const [ stats,setStats ] = useState(3);
+    const [ completion,setCompletion ] = useState(75);
+    const [ streak, setStreak ] = useState(20);
 
     return (
-        <div className="statsbar">
-            <div className="section-1 grid-cols-2 text-sm border rounded-md mx-10">
-                <div className="sectionbar-1 flex grid-cols-3 justify-evenly">
-                    <div className="mx-2">
-                        <p>Morning run</p>
-                    </div>
-                    <div className="mx-2">
-                        <p>{streak} day streak</p>
-                    </div>
-                    <button className="border rounded-md px-2 py-1">Done Today</button>
+        <div className="statsbar mt-5">
+            <div className="flex gap-4 justify-around">
+                <div className="grid-rows-2 w-auto p-5 ml-10 my-5 text-left">
+                    <p className="text-xs">Habits tracked</p>
+                    <p className="text-lg">{stats}</p>
                 </div>
-                <div className="sectionbar-2">
-                    <p>null</p>
+                <div className="grid-rows-2 w-auto p-5 m-5 text-left">
+                    <p className="text-xs">Today's completion</p>
+                    <p className="text-lg">{completion} %</p>
                 </div>
-            </div>
-            <div className="section-2 flex text-sm">
-                <p>Read 20 Pages</p>
-                <button className="border">Check In</button>
-            </div>
+                <div className="grid-rows-2 w-auto p-5 mr-10 my-5 text-left">
+                    <p className="text-xs">Best streak</p>
+                    <p className="text-lg">{streak} days</p>
+                </div>
+            </div>    
         </div>
     )
 }

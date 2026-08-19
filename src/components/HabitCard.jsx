@@ -1,27 +1,95 @@
 import { useState } from "react"
 
-function HabitCard() {
+function HabitCard(){
 
-    const [ habit,setHabit ] = useState(0);
-    const [ completion,setCompletion ] = useState(0);
-    const [ streak, setStreak ] = useState(0);
+    const [ streak,setStreak ] = useState(0);
 
     return (
-        <div className="mt-5">
-            <div className="flex gap-4 justify-around">
-                <div className="grid-rows-2 w-auto p-5 ml-10 my-5 text-left">
-                    <p className="text-xs">Habits tracked</p>
-                    <p className="text-lg">{habit}</p>
+        <div className="habitcard">
+            <div className="section-1 grid-cols-2 text-sm border rounded-md mx-10">
+                <div className="sectionbar-1 flex grid-cols-2 justify-around">
+                    <div className="flex mx-2 gap-3">
+                        <span>Morning run</span>
+                        <p>{streak} day streak</p>
+                    </div>
+                    <button className="border rounded-md px-2 py-1">Done Today</button>
                 </div>
-                <div className="grid-rows-2 w-auto p-5 m-5 text-left">
-                    <p className="text-xs">Today's completion</p>
-                    <p className="text-lg">{completion} %</p>
+                <div className="sectionbar-2">
+                    <div className="grid grid-cols-28 gap-1">
+                        <div className=" border rounded">X</div>
+                        <div className=" border rounded">X</div>
+                        <div className=" border rounded">X</div>
+                        <div className=" border rounded">X</div>
+                        <div className=" border rounded">X</div>
+                        <div className=" border rounded">X</div>
+                        <div className=" border rounded">X</div>
+                        <div className=" border rounded">X</div>
+                        <div className=" border rounded">X</div>
+                        <div className=" border rounded">X</div>
+                        <div className=" border rounded">X</div>
+                        <div className=" border rounded">X</div>
+                        <div className=" border rounded">X</div>
+                        <div className=" border rounded">X</div>
+                        <div className=" border rounded">X</div>
+                        <div className=" border rounded">X</div>
+                        <div className=" border rounded">X</div>
+                        <div className=" border rounded">X</div>
+                        <div className=" border rounded">X</div>
+                        <div className=" border rounded">X</div>
+                        <div className=" border rounded">X</div>
+                        <div className=" border rounded">X</div>
+                        <div className=" border rounded">X</div>
+                        <div className=" border rounded">X</div>
+                        <div className=" border rounded">X</div>
+                        <div className=" border rounded">X</div>
+                        <div className=" border rounded">X</div>
+                        <div className=" border rounded">X</div>
+                    </div>
                 </div>
-                <div className="grid-rows-2 w-auto p-5 mr-10 my-5 text-left">
-                    <p className="text-xs">Best streak</p>
-                    <p className="text-lg">{streak} days</p>
+            </div>
+            <div className="section-1 grid-cols-2 text-sm border rounded-md mx-10 my-5">
+                <div className="sectionbar-1 flex grid-cols-3 justify-evenly">
+                    <div className="mx-2">
+                        <p>Read 20 pages</p>
+                    </div>
+                    <div className="mx-2">
+                        <p>{streak} day streak</p>
+                    </div>
+                    <button className="border rounded-md px-2 py-1">Check In</button>
                 </div>
-            </div>    
+                <div className="sectionbar-2">
+                    <div className="grid grid-cols-28 gap-1">
+                        <div className=" border rounded">X</div>
+                        <div className=" border rounded">X</div>
+                        <div className=" border rounded">X</div>
+                        <div className=" border rounded">X</div>
+                        <div className=" border rounded">X</div>
+                        <div className=" border rounded">X</div>
+                        <div className=" border rounded">X</div>
+                        <div className=" border rounded">X</div>
+                        <div className=" border rounded">X</div>
+                        <div className=" border rounded">X</div>
+                        <div className=" border rounded">X</div>
+                        <div className=" border rounded">X</div>
+                        <div className=" border rounded">X</div>
+                        <div className=" border rounded">X</div>
+                        <div className=" border rounded">X</div>
+                        <div className=" border rounded">X</div>
+                        <div className=" border rounded">X</div>
+                        <div className=" border rounded">X</div>
+                        <div className=" border rounded">X</div>
+                        <div className=" border rounded">X</div>
+                        <div className=" border rounded">X</div>
+                        <div className=" border rounded">X</div>
+                        <div className=" border rounded">X</div>
+                        <div className=" border rounded">X</div>
+                        <div className=" border rounded">X</div>
+                        <div className=" border rounded">X</div>
+                        <div className=" border rounded">X</div>
+                        <div className=" border rounded">X</div>
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }

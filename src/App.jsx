@@ -14,8 +14,8 @@ function App() {
   return (
     <>
       <Header />
-      <HabitCard />
       <StatsBar />
+      <HabitCard />
       <HabitModal />
       
     </>
