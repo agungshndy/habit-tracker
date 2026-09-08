@@ -7,6 +7,7 @@ import Header from './components/Header'
 import HabitCard from './components/HabitCard'
 import HabitModal from './components/HabitModal'
 import StatsBar from './components/StatsBar'
+import HabitList from './components/HabitCard'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -15,7 +16,7 @@ function App() {
     <>
       <Header />
       <StatsBar />
-      <HabitCard />
+      <HabitList />
       <HabitModal />
       
     </>
