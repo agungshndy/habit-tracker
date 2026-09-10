@@ -1,4 +1,8 @@
-function HabitModal(isOpen) {
+import { useState } from "react";
+
+function HabitModal(isModalOpen) {
+    const [ isOpen, setIsOpen ] = useState(false);
+    
     if (!isOpen) {
         return null;
     }

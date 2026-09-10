@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-function Header() {
+function Header({onClick : onAddClick}) {
     const [ addItem, setAddItem ] = useState([])
 
     return (
@@ -10,7 +10,7 @@ function Header() {
             </div>  
             <div className="items-center text-center justify-items-center flex mr-7">
                 <button className="text-sm border rounded-md px-3 py-1 hover:cursor-pointer transition-colors hover:opacity-75"
-                //onClick={OnAddClick}
+                onClick={onAddClick}
                 >
                     + Add Habit
                 </button>

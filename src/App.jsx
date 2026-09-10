@@ -9,9 +9,8 @@ function App() {
   const [ isModalOpen, setIsModalOpen ] = useState(false);
   
   function onAddClick(){
-    setIsModalOpen(isModalOpen =>
-    {isModalOpen ? "open form" : "close form"}
-    )
+    setIsModalOpen(true)
+    console.log("see if the button works");
   }
 
   return (
