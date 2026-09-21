@@ -17,12 +17,12 @@ function HabitModal({ submitName, isOpen, onClick : onCloseClick }) {
         value={habitName} 
         onChange={(e)=> setHabitName(e.target.value)}/>Type anything here
         <button className="text-sm border rounded-md w-auto px-3 py-1 hover:cursor-pointer transition-colors hover:opacity-75"
-        onClick={() => submitName(habitName)}
+        onClick={() => {
+            submitName(habitName)
+            setHabitName("");
+            onCloseClick();
+        }}
         >Submit</button>
-
-        <button className="text-sm border rounded-md w-auto px-3 py-1 hover:cursor-pointer transition-colors hover:opacity-75"
-        onClick={onCloseClick}
-        >Close</button>
         </>
     )    
 }
