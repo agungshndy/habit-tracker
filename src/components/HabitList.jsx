@@ -1,21 +1,4 @@
-import { useState } from "react"
-
-function HabitList(){
-    const [ habits, setHabits ] = useState([
-        { id : 1, name : "Morning run", streak : 1, isDoneToday : false },
-        { id : 2, name : "Read 20 pages", streak : 10, isDoneToday : false},
-        { id : 3, name : "Learn React", streak : 0, isDoneToday : false},
-    ]);
-
-    const toggleHabit = (id) => {
-        setHabits(prevHabits =>
-            prevHabits.map(habit =>
-                habit.id === id 
-                ? { ...habit, isDoneToday : !habit.isDoneToday, streak : habit.isDoneToday ? habit.streak - 1 : habit.streak + 1}
-                : habit
-            )
-        )
-    }
+function HabitList({habits : habits ,onToggle : toggleHabit}){
 
     return (
     <div className="habitcard">
@@ -31,8 +14,6 @@ function HabitList(){
     </div>
     );
 }
-
-
 
 function HabitCard({name, streak, isDoneToday, onToggle}){
 
