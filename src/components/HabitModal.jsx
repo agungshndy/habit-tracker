@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function HabitModal({ submitName, isOpen, onClick : onCloseClick }) {
+function HabitModal({ submitName, isOpen, onClick : onSubmitClick }) {
 
     const [ habitName, setHabitName ] = useState("");
     
@@ -20,7 +20,7 @@ function HabitModal({ submitName, isOpen, onClick : onCloseClick }) {
         onClick={() => {
             submitName(habitName)
             setHabitName("");
-            onCloseClick();
+            onSubmitClick();
         }}
         >Submit</button>
         </>

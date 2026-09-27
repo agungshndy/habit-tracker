@@ -1,7 +1,4 @@
-import { useState } from "react"
-
 function Header({onClick : onAddClick}) {
-    const [ addItem, setAddItem ] = useState([])
 
     return (
         <div className="grid-cols-2 flex gap-4 mb-5 justify-between">
