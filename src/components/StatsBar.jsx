@@ -1,5 +1,3 @@
-import { useState } from "react"
-
 function StatsBar({habits}) {
 
     const streakValues = habits.map(habit => habit.streak);
@@ -7,7 +5,7 @@ function StatsBar({habits}) {
     const dailyComp = habits.filter(habit => habit.isDoneToday);
     const comp = dailyComp.length;
     const total = habits.length;
-    const completion = total === 0 ? 0 : (comp/total) * 100;    
+    const completion = total === 0 ? 0 : Math.round((comp/total) * 100);    
 
     return (
         <div className="statsbar mt-5">

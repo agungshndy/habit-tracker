@@ -25,6 +25,12 @@ function App() {
         setHabits(prevHabits => updateHabitToggle(prevHabits, id))
     }
 
+  const deleteHabit = (id) => {
+        setHabits(prevHabits => 
+          prevHabits.filter(habit => habit.id !== id)
+        )
+    }
+
   useEffect(()=> {
       localStorage.setItem("habits", JSON.stringify(habits))
     }, [habits])
@@ -55,6 +61,7 @@ function App() {
       <HabitList
       habits = {habits}
       onToggle = {toggleHabit}
+      onClick = {deleteHabit}
       />
       <HabitModal
       isOpen = {isModalOpen}

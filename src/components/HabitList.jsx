@@ -1,4 +1,4 @@
-function HabitList({habits : habits ,onToggle : toggleHabit}){
+function HabitList({habits : habits ,onToggle : toggleHabit, onClick : deleteHabit}){
 
     return (
     <div className="habitcard">
@@ -9,13 +9,14 @@ function HabitList({habits : habits ,onToggle : toggleHabit}){
             streak={habit.streak}
             isDoneToday={habit.isDoneToday}
             onToggle={()=> toggleHabit(habit.id)}
+            onDelete={()=> deleteHabit(habit.id)}
             />
         ))}
     </div>
     );
 }
 
-function HabitCard({name, streak, isDoneToday, onToggle}){
+function HabitCard({name, streak, isDoneToday, onToggle, onDelete}){
 
     return (
         <div className="habitcard">
@@ -26,6 +27,7 @@ function HabitCard({name, streak, isDoneToday, onToggle}){
                         <p>{streak} day streak</p>
                     </div>
                     <button className="border rounded-md px-2 py-1 my-2 hover:cursor-pointer" onClick={onToggle}>{isDoneToday ? "Done Today" : "Check In"}</button>
+                    <button className="border rounded-md px-2 py-1 my-2 hover:cursor-pointer" onClick={onDelete}>Delete</button>
                 </div>
                 <div className="sectionbar-2">
                     <div className="grid grid-cols-28 gap-1">
