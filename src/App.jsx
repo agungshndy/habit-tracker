@@ -14,9 +14,9 @@ function App() {
       return JSON.parse(saved)
     } else {
       return [
-        { id : 1, name : "Morning run", history [...dates], streak : 1, isDoneToday : false },
-        { id : 2, name : "Read 20 pages", history [...dates], streak : 10, isDoneToday : false},
-        { id : 3, name : "Learn React", history [...dates], streak : 0, isDoneToday : false},
+        { id : 1, name : "Morning run", history : [ "2026-10-03", "2026-10-04", "2026-10-05", "2026-10-06"] },
+        { id : 2, name : "Read 20 pages", history : [ "2026-10-01", "2026-10-02", "2026-10-03", "2026-10-04", "2026-10-05", "2026-10-06"] },
+        { id : 3, name : "Learn React", history : [ "2026-10-04", "2026-10-05", "2026-10-06"] },
       ];
     }
   });
@@ -46,7 +46,7 @@ function App() {
   function addHabit(name) {
     setHabits(prevHabits => [
       ...prevHabits,
-      { id : Date.now(), name : name, history : [], streak : 0, isDoneToday : false}
+      { id : Date.now(), name : name, history : [] }
     ]);
   }
 
@@ -64,8 +64,10 @@ function App() {
     let daysAgo = 0;
 
     while ( history.includes(getDateDaysAgo(daysAgo)) ) {
-
+      streak += 1;
+      daysAgo += 1;
     }
+    return streak;
   }
 
   function isDoneToday(history) {
