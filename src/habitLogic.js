@@ -1,7 +1,17 @@
 export function updateHabitToggle(habits, id) {
-    return habits.map(habit => 
-        habit.id === id 
-        ? { ...habit, isDoneToday : !habit.isDoneToday, streak : habit.isDoneToday ? habit.streak - 1 : habit.streak + 1 }
-        : habit
-    )
+    
+    const today = new Date().toISOString().split("T")[0];
+
+    return habits.map(habit => {
+        
+        if ( habit.id !== id ){ 
+        return habit
+       }
+
+       if (habit.history.includes(today)) {
+
+       } else {
+        
+       }
+    });
 }
