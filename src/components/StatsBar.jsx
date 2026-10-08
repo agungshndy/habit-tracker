@@ -3,11 +3,14 @@ import { getStreak, isDoneToday } from "../habitLogic";
 function StatsBar({habits}) {
 
     const streakValues = habits.map(habit => getStreak(habit.history));
-    const bestStreak = Math.max(...streakValues);
+    const bestStreak = Math.max(0, ...streakValues);
     const dailyComp = habits.filter(habit => isDoneToday(habit.history));
     const comp = dailyComp.length;
     const total = habits.length;
     const completion = total === 0 ? 0 : Math.round((comp/total) * 100);    
+    console.log(streakValues);
+    console.log(typeof(streakValues));
+    console.log(typeof(bestStreak));
 
     return (
         <div className="statsbar mt-5">
