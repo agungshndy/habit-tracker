@@ -9,9 +9,9 @@ export function updateHabitToggle(habits, id) {
        }
 
        if (habit.history.includes(today)) {
-
+        return { ...habit, history : habit.history.filter(date => date !== today) }
        } else {
-        
+        return { ...habit, history : [...habit.history, today] }
        }
     });
 }
