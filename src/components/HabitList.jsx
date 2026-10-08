@@ -1,3 +1,5 @@
+import { getStreak, isDoneToday } from "../habitLogic";
+
 function HabitList({habits : habits ,onToggle : toggleHabit, onClick : deleteHabit}){
 
     return (
@@ -6,8 +8,9 @@ function HabitList({habits : habits ,onToggle : toggleHabit, onClick : deleteHab
             <HabitCard
             key={habit.id}
             name={habit.name}
-            streak={habit.streak}
-            isDoneToday={habit.isDoneToday}
+            history={habit.history}
+            streak={getStreak(habit.history)}
+            isDoneToday={isDoneToday(habit.history)}
             onToggle={()=> toggleHabit(habit.id)}
             onDelete={()=> deleteHabit(habit.id)}
             />
