@@ -1,8 +1,10 @@
+import { getStreak, isDoneToday } from "../habitLogic";
+
 function StatsBar({habits}) {
 
-    const streakValues = habits.map(habit => habit.streak);
+    const streakValues = habits.map(habit => getStreak(habit.history));
     const bestStreak = Math.max(...streakValues);
-    const dailyComp = habits.filter(habit => habit.isDoneToday);
+    const dailyComp = habits.filter(habit => isDoneToday(habit.history));
     const comp = dailyComp.length;
     const total = habits.length;
     const completion = total === 0 ? 0 : Math.round((comp/total) * 100);    
