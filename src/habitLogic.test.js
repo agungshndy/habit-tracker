@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { updateHabitToggle, getToday } from './habitLogic'
+import { updateHabitToggle, getToday, getDateDaysAgo, getStreak, isDoneToday } from './habitLogic'
 
 describe('updateHabitToggle', () => {
     it("adds today to history when toggled from not-done", () => {
@@ -37,5 +37,29 @@ describe('updateHabitToggle', () => {
         expect(result[0]).toBe(habits[0])
         expect(result[0].history).toEqual([today])
 
+    })
+})
+
+describe('getStreak', () => {
+    it("returns 0 for an empty history", () => {
+        expect(getStreak([])).toBe(0)
+    })
+
+    it("returns 2 if today and yesterday are in history", () => {
+        expect(getStreak([])).toBe(2)
+    })
+
+    it("returns 2 if today is not done, but yesterday and the day before are", () => {
+        expect(getStreak([])).toBe(2)
+    })
+})
+
+describe('isDoneToday', () => {
+    it("returns true when today is in history", () => {
+        expect(isDoneToday([])).toBe(true)
+    })
+
+    it("returns false when today isn't in history", () => {
+        expect(isDoneToday([])).toBe(false)
     })
 })
