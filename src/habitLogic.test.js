@@ -14,7 +14,7 @@ describe('updateHabitToggle', () => {
         expect(habits[0].history).toEqual([])
     })
 
-    it("marks habit as not-done and decrease streak when toggled from done", () => {
+    it("removes today from history when toggled from done", () => {
         const today = getToday()
         const habits = [
             { id : 1, name : "Morning run", history : [today] }
@@ -26,7 +26,7 @@ describe('updateHabitToggle', () => {
         expect(result[0].history).toEqual([])
     })
 
-    it("returns habit unchanged if the id does not exist", () => {
+    it("returns habit unchanged if the id doesn't exist", () => {
         const today = getToday()
         const habits = [
             { id : 1, name : "Morning run", history : [today] }
@@ -34,8 +34,8 @@ describe('updateHabitToggle', () => {
 
         const result = updateHabitToggle(habits, 6)
 
-        expect(result[0].history).toBe(false)
-        expect(result[0].history).toEqual("2026-10-08")
+        expect(result[0]).toBe(habits[0])
+        expect(result[0].history).toEqual([today])
 
     })
 })
